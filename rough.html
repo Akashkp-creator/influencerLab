@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partners-section {
+        padding: 80px 20px;
+        background: linear-gradient(to right, #f0fff7, #f5f8ff);
+        text-align: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        overflow: hidden;
+      }
+
+      .partners-section h2 {
+        font-size: 3em;
+        color: rgba(3, 43, 243, 0.8);
+        margin-bottom: 20px;
+      }
+
+      .partners-section p {
+        color: #26d48c;
+        font-size: 1.2em;
+        margin-bottom: 50px;
+      }
+
+      .partners-slider {
+        display: flex;
+        width: max-content;
+        animation: scroll 30s linear infinite;
+        gap: 40px;
+      }
+
+      .partners-logos-wrapper {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .partner {
+        flex: 0 0 auto;
+        max-width: 180px;
+        padding: 20px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .partner:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(3, 43, 243, 0.2);
+      }
+
+      .partner img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        filter: grayscale(0.3);
+        transition: filter 0.3s ease;
+      }
+
+      .partner:hover img {
+        filter: grayscale(0);
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .partners-section h2 {
+          font-size: 2.2em;
+        }
+
+        .partner {
+          max-width: 140px;
+          padding: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .partner {
+          max-width: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="partners-section">
+      <h2>Our Partners</h2>
+      <p>Trusted by industry leaders</p>
+
+      <div class="partners-logos-wrapper">
+        <div class="partners-slider">
+          <!-- Duplicate logos for smooth infinite effect -->
+          <div class="partner">
+            <img
+              src="https://via.placeholder.com/150x80?text=Partner+1"
+              alt="Partner 1"
+            />
+          </div>
+          <div class="partner">
+            <img
+              src="https://via.placeholder.com/150x80?text=Partner+2"
+              alt="Partner 2"
+            />
+          </div>
+          <div class="partner">
+            <img
+              src="https://via.placeholder.com/150x80?text=Partner+3"
+              alt="Partner 3"
+            />
+          </div>
+          <div class="partner">
+            <img
+              src="https://via.placeholder.com/150x80?text=Partner+4"
+              alt="Partner 4"
+            />
+          </div>
+          <div class="partner">
+            <img
+              src="https://via.placeholder.com/150x80?text=Partner+5"
+              alt="Partner 5"
+            />
+          </div>
+          <div class="partner">
+            <img
+              src="https://via.placeholder.com/150x80?text=Partner+1"
+              alt="Partner 1 duplicate"
+            />
+          </div>
+          <div class="partner">
+            <img
+              src="https://via.placeholder.com/150x80?text=Partner+2"
+              alt="Partner 2 duplicate"
+            />
+          </div>
+          <div class="partner">
+            <img
+              src="https://via.placeholder.com/150x80?text=Partner+3"
+              alt="Partner 3 duplicate"
+            />
+          </div>
+          <div class="partner">
+            <img
+              src="https://via.placeholder.com/150x80?text=Partner+4"
+              alt="Partner 4 duplicate"
+            />
+          </div>
+          <div class="partner">
+            <img
+              src="https://via.placeholder.com/150x80?text=Partner+5"
+              alt="Partner 5 duplicate"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

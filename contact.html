@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>influencer Labs</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.png" />
+
+    <style>
+      .contact-wrapper {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .contact-header h1 {
+        font-size: 2.5rem;
+        color: rgba(3, 43, 243, 0.9);
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .contact-header h1:after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 4px;
+        background: rgba(3, 43, 243, 0.7);
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .contact-header p {
+        color: #555;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .contact-form {
+        flex: 1;
+        min-width: 300px;
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+      }
+
+      .contact-form:hover {
+        transform: translateY(-5px);
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+        position: relative;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #333;
+        font-size: 1rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s;
+        background-color: #f9f9f9;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: rgba(3, 43, 243, 0.7);
+        background-color: white;
+        box-shadow: 0 0 0 3px rgba(3, 43, 243, 0.1);
+      }
+
+      .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .form-group i {
+        position: absolute;
+        right: 15px;
+        top: 45px;
+        color: #999;
+        font-size: 18px;
+      }
+
+      .error-message {
+        color: #e74c3c;
+        font-size: 14px;
+        margin-top: 8px;
+        display: none;
+        font-weight: 500;
+      }
+
+      .submit-btn {
+        background: linear-gradient(
+          135deg,
+          rgba(3, 43, 243, 0.9) 0%,
+          rgba(2, 32, 200, 0.9) 100%
+        );
+        color: white;
+        border: none;
+        padding: 16px 30px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        box-shadow: 0 4px 15px rgba(3, 43, 243, 0.3);
+      }
+
+      .submit-btn:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(2, 32, 200, 0.9) 0%,
+          rgba(1, 21, 150, 0.9) 100%
+        );
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(3, 43, 243, 0.4);
+      }
+
+      .submit-btn:active {
+        transform: translateY(0);
+      }
+
+      .contact-info {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .location-card {
+        background: white;
+        padding: 30px;
+        margin-bottom: 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .location-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .location-card:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(3, 43, 243, 0.9),
+          rgba(79, 195, 247, 0.8)
+        );
+      }
+
+      .location-card h3 {
+        color: rgba(3, 43, 243, 0.9);
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .location-card h3 i {
+        margin-right: 12px;
+        font-size: 1.3rem;
+        color: rgba(3, 43, 243, 0.8);
+      }
+
+      .location-card p {
+        margin-bottom: 12px;
+        color: #555;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        padding-left: 5px;
+        position: relative;
+      }
+
+      .location-card p:before {
+        content: "•";
+        color: rgba(3, 43, 243, 0.7);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+
+      /* Validation styles */
+      .error {
+        border-color: #e74c3c !important;
+        background-color: #fef0ef !important;
+      }
+
+      .success {
+        border-color: #2ecc71 !important;
+        background-color: #f0fdf4 !important;
+      }
+
+      .visible {
+        display: block;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .contact-container {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .contact-form,
+        .contact-info {
+          padding: 30px;
+        }
+
+        .contact-header h1 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact-wrapper {
+          margin: 20px auto;
+          padding: 15px;
+        }
+
+        .contact-form,
+        .contact-info {
+          padding: 25px 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+          padding: 12px;
+        }
+
+        .submit-btn {
+          padding: 14px 20px;
+          font-size: 16px;
+        }
+      }
+
+      /* logo */
+      /* CSS */
+      .logo-container {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .logo-img {
+        width: 180px;
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 4px solid rgba(3, 43, 243, 0.8);
+        border-radius: 12px;
+        background-color: #26d48c;
+        padding: 5px;
+      }
+
+      .logo-img:hover {
+        transform: scale(1.05) rotateY(10deg);
+        box-shadow: 0 0 20px rgba(3, 43, 243, 0.6);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark py-2 d-none d-md-flex">
+      <div class="container">
+        <div class="d-flex justify-content-between topbar">
+          <div class="top-info">
+            <!-- <small class="me-3 text-white-50"
+              ><a href="#"
+                ><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a
+              >Bangalore</small
+            > -->
+            <small class="me-3 text-white-50"
+              ><a href="#"
+                ><i class="fas fa-envelope me-2 text-secondary"></i></a
+              >info@influencerlabs.com</small
+            >
+          </div>
+          <div id="note" class="text-secondary d-none d-xl-flex">
+            <small>Note : We help you to Grow your Business</small>
+          </div>
+          <div class="top-link">
+            <a
+              href="https://www.facebook.com/ilabs2021"
+              class="bg-light nav-fill btn btn-sm-square rounded-circle"
+              ><i class="fab fa-facebook-f text-primary"></i
+            ></a>
+            <!-- <a
+              href=""
+              class="bg-light nav-fill btn btn-sm-square rounded-circle"
+              ><i class="fab fa-twitter text-primary"></i
+            ></a> -->
+            <a
+              href="https://www.instagram.com/influencer_labs_in/"
+              class="bg-light nav-fill btn btn-sm-square rounded-circle"
+              ><i class="fab fa-instagram text-primary"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/ilabs2021/"
+              class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"
+              ><i class="fab fa-linkedin-in text-primary"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-primary navfix">
+      <div class="container">
+        <nav class="navbar navbar-dark navbar-expand-lg py-0">
+          <!-- <a href="index.html" class="navbar-brand">
+            <h1 class="text-white fw-bold d-block" style="font-size: 1.5rem">
+              influencer<span class="text-secondary">Labs</span>
+            </h1>
+          </a> -->
+          <div class="logo-container">
+            <a href="index.html">
+              <img src="./logo.png" alt="Company Logo" class="logo-img" />
+            </a>
+          </div>
+          <button
+            type="button"
+            class="navbar-toggler me-0"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse bg-transparent"
+            id="navbarCollapse"
+          >
+            <div class="navbar-nav ms-auto mx-xl-auto p-0">
+              <a href="index.html" class="nav-item nav-link">Home</a>
+              <a href="about.html" class="nav-item nav-link">About</a>
+              <a href="team.html" class="nav-item nav-link">Products</a>
+              <a href="service.html" class="nav-item nav-link">Services</a>
+
+              <a href="project.html" class="nav-item nav-link">Careers</a>
+              <!-- <div class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >Others</a
+                >
+                <div class="dropdown-menu rounded">
+                  <a href="blog.html" class="dropdown-item">Our Blog</a>
+                  <a href="team.html" class="dropdown-item">Our Products</a>
+                  <a href="testimonial.html" class="dropdown-item"
+                    >Testimonial</a
+                  >
+                  <a href="404.html" class="dropdown-item">404 Page</a>
+                </div>
+              </div> -->
+              <a href="contact.html" class="nav-item nav-link active"
+                >Contact</a
+              >
+            </div>
+          </div>
+          <div class="d-none d-xl-flex flex-shirink-0">
+            <div
+              id="phone-tada"
+              class="d-flex align-items-center justify-content-center me-4"
+            >
+              <a href="" class="position-relative animated tada infinite">
+                <i class="fa fa-phone-alt text-white fa-2x"></i>
+                <div class="position-absolute" style="top: -7px; left: 20px">
+                  <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                </div>
+              </a>
+            </div>
+            <div class="d-flex flex-column pe-4">
+              <span class="text-white-50">Call or WhatsApp</span>
+              <span class="text-secondary">Call: +91 76766 92828</span>
+            </div>
+            <!-- <div class="d-flex align-items-center justify-content-center ms-4">
+              <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
+            </div> -->
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5">
+      <div class="container text-center py-5">
+        <h1 class="display-2 text-white mb-4 animated slideInDown">
+          Contact Us
+        </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item" aria-current="page">Contact</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Fact Start -->
+    <div class="container-fluid bg-secondary py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
+            <div class="d-flex counter">
+              <h1 class="me-3 text-primary counter-value">99</h1>
+              <h5 class="text-white mt-1">Success in getting happy customer</h5>
+            </div>
+          </div>
+          <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
+            <div class="d-flex counter">
+              <h1 class="me-3 text-primary counter-value">25</h1>
+              <h5 class="text-white mt-1">Thousands of successful business</h5>
+            </div>
+          </div>
+          <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
+            <div class="d-flex counter">
+              <h1 class="me-3 text-primary counter-value">120</h1>
+              <h5 class="text-white mt-1">Total clients who love HighTech</h5>
+            </div>
+          </div>
+          <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
+            <div class="d-flex counter">
+              <h1 class="me-3 text-primary counter-value">5</h1>
+              <h5 class="text-white mt-1">
+                Stars reviews given by satisfied clients
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fact End -->
+
+    <!-- Contact Start -->
+    <!-- <div class="container-fluid py-5 mt-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h5 class="text-primary">Get In Touch</h5>
+                    <h1 class="mb-3">Contact for any query</h1>
+                    <p class="mb-2">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                </div>
+                <div class="contact-detail position-relative p-5">
+                    <div class="row g-5 mb-5 justify-content-center">
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">
+                            <div class="d-flex bg-light p-3 rounded">
+                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-primary">Address</h4>
+                                    <a href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6" target="_blank" class="h5">23 rank Str, NY</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".5s">
+                            <div class="d-flex bg-light p-3 rounded">
+                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+                                    <i class="fa fa-phone text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-primary">Call Us</h4>
+                                    <a class="h5" href="tel:+0123456789" target="_blank">+012 3456 7890</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".7s">
+                            <div class="d-flex bg-light p-3 rounded">
+                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+                                    <i class="fa fa-envelope text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-primary">Email Us</h4>
+                                    <a class="h5" href="mailto:info@example.com" target="_blank">info@example.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-5">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
+                            <div class="p-5 h-100 rounded contact-map">
+                                <iframe class="rounded w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.4710403339755!2d-73.82241512404069!3d40.685622471397615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c26749046ee14f%3A0xea672968476d962c!2s123rd%20St%2C%20Queens%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1686493221834!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
+                            <div class="p-5 rounded contact-form">
+                                <div class="mb-4">
+                                    <input type="text" class="form-control border-0 py-3" placeholder="Your Name">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="email" class="form-control border-0 py-3" placeholder="Your Email">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" class="form-control border-0 py-3" placeholder="Project">
+                                </div>
+                                <div class="mb-4">
+                                    <textarea class="w-100 form-control border-0 py-3" rows="6" cols="10" placeholder="Message"></textarea>
+                                </div>
+                                <div class="text-start">
+                                    <button class="btn bg-primary text-white py-3 px-5" type="button">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div> -->
+
+    <div class="contact-wrapper">
+      <div class="contact-header">
+        <h1>Get In Touch</h1>
+        <p>
+          Have questions or want to discuss a project? Fill out the form below
+          and our team will get back to you within 24 hours.
+        </p>
+      </div>
+
+      <div class="contact-container">
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name*</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Enter your full name"
+            />
+            <i class="fas fa-user"></i>
+            <span class="error-message" id="nameError"
+              >Please enter your name</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Enter your email address"
+            />
+            <i class="fas fa-envelope"></i>
+            <span class="error-message" id="emailError"
+              >Please enter a valid email address</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number*</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              placeholder="Enter your phone number"
+            />
+            <i class="fas fa-phone"></i>
+            <span class="error-message" id="phoneError"
+              >Please enter a valid phone number</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message*</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Type your message here..."
+            ></textarea>
+            <span class="error-message" id="messageError"
+              >Please enter your message</span
+            >
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane" style="margin-right: 8px"></i> Send
+            Message
+          </button>
+        </form>
+
+        <div class="contact-info">
+          <div class="location-card">
+            <h3><i class="fas fa-map-marker-alt"></i> Bangalore</h3>
+            <p>
+              No.435 18th Cross, Jayanagar 1st & 3rd Block East Bangalore 560011
+            </p>
+            <p>Next to Saraswati Vidya Mandir</p>
+            <p>Near to Jayanagar Swimming pool Main Gate</p>
+          </div>
+
+          <div class="location-card">
+            <h3><i class="fas fa-map-marker-alt"></i> Hyderabad</h3>
+            <p>
+              Survey #9,Hitec City, Kothaguda, Jubliee Enclave, Kondapur,
+              Hyderabad- 500084
+            </p>
+          </div>
+
+          <div class="location-card">
+            <h3><i class="fas fa-map-marker-alt"></i> USA</h3>
+            <p>12439 Orchid Dr</p>
+            <p>Frisco, TX 75035</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+      <div class="container pt-5 pb-4">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6">
+            <a href="index.html">
+              <h1 class="text-white fw-bold d-block" style="font-size: 1.5rem">
+                <span class="text-secondary">influencerLabs</span>
+              </h1>
+            </a>
+            <p class="mt-4 text-light">
+              Influencer Labs helps organizations drive progress by aligning
+              agile governance and change frameworks with their strategy and
+              workforce skills. Through smart data management, we enable
+              innovation, better digital experiences, and increased
+              profitability
+            </p>
+            <!-- <div class="d-flex hightech-link">
+              <a
+                href="https://www.facebook.com/ilabs2021"
+                class="btn-light nav-fill btn btn-square rounded-circle me-2"
+                ><i class="fab fa-facebook-f text-primary"></i
+              ></a>
+
+              <a
+                href="https://www.instagram.com/influencer_labs_in/"
+                class="btn-light nav-fill btn btn-square rounded-circle me-2"
+                ><i class="fab fa-instagram text-primary"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/ilabs2021/"
+                class="btn-light nav-fill btn btn-square rounded-circle me-0"
+                ><i class="fab fa-linkedin-in text-primary"></i
+              ></a>
+            </div> -->
+          </div>
+          <!-- <div class="col-lg-3 col-md-6">
+            <a href="#" class="h3 text-secondary">Short Link</a>
+            <div class="mt-4 d-flex flex-column short-link">
+              <a href="./about.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>About
+                us</a
+              >
+              <a href="./contact.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>Contact
+                us</a
+              >
+              <a href="./service.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>Our
+                Services</a
+              >
+              <a href="./team.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>Our
+                Products</a
+              >
+            </div>
+          </div> -->
+          <!-- <div class="col-lg-3 col-md-6">
+            <a href="#" class="h3 text-secondary">Help Link</a>
+            <div class="mt-4 d-flex flex-column help-link">
+              <a href="" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>Terms Of
+                use</a
+              >
+              <a href="" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>Privacy
+                Policy</a
+              >
+              <a href="" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>Helps</a
+              >
+              <a href="" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>FQAs</a
+              >
+              <a href="" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i
+                >Contact</a
+              >
+            </div>
+          </div> -->
+          <div class="col-lg-3 col-md-6">
+            <a href="#" class="h3 text-secondary">Products</a>
+            <div class="mt-4 d-flex flex-column short-link">
+              <a href="./team.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>Test
+                Management Platform</a
+              >
+              <a href="./team.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i
+                >E-learning Platform</a
+              >
+              <a href="./team.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i
+                >Assessment Platform</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <a href="#" class="h3 text-secondary">Services</a>
+            <div class="mt-4 d-flex flex-column short-link">
+              <a href="./service.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>Product,
+                Platform, and Practice Engineering</a
+              >
+              <a href="./service.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>Data and
+                Artificial Intelligence</a
+              >
+              <a href="./service.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>IT
+                Infrastructure Management Services</a
+              >
+              <a href="./service.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>Data
+                Analytics</a
+              >
+              <a href="./service.html" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i>Placement
+                Services</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <a href="#" class="h3 text-secondary">Contact and WhatsApp</a>
+            <div class="text-white mt-4 d-flex flex-column contact-link">
+              <!-- <a href="#" class="pb-3 text-light border-bottom border-primary"
+                ><i class="fas fa-map-marker-alt text-secondary me-2"></i>
+                No.435 18th Cross, Jayanagar 1st & 3rd Block East Bangalore
+                560011 Next to Saraswati Vidya Mandir Near to Jayanagar Swimming
+                pool Main Gate</a
+              > -->
+              <a href="#" class="py-3 text-light border-bottom border-primary"
+                ><i class="fas fa-phone-alt text-secondary me-2"></i> +91 76766
+                92828</a
+              >
+              <a href="#" class="py-3 text-light border-bottom border-primary"
+                ><i class="fas fa-envelope text-secondary me-2"></i>
+                info@influencerlabs.com</a
+              >
+            </div>
+            <div class="d-flex hightech-link" style="margin-top: 1rem">
+              <a
+                href="https://www.facebook.com/ilabs2021"
+                class="btn-light nav-fill btn btn-square rounded-circle me-2"
+                ><i class="fab fa-facebook-f text-primary"></i
+              ></a>
+
+              <a
+                href="https://www.instagram.com/influencer_labs_in/"
+                class="btn-light nav-fill btn btn-square rounded-circle me-2"
+                ><i class="fab fa-instagram text-primary"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/ilabs2021/"
+                class="btn-light nav-fill btn btn-square rounded-circle me-0"
+                ><i class="fab fa-linkedin-in text-primary"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="text-light mt-5 mb-4" />
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <span class="text-light"
+              ><a href="#" class="text-secondary"
+                ><i class="fas fa-copyright text-secondary me-2"></i>influencer
+                Labs</a
+              >, All right reserved.</span
+            >
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <span class="text-light"
+              >Designed By
+              <a href="" class="text-secondary">influencer Labs</a></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"
+      ><i class="fa fa-arrow-up text-white"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
